@@ -1,0 +1,8 @@
+item: item_id(PK), item_type, item_description, price, product_img, weight
+customer: username(PK), name, password, password_hint, email
+item_category: item_category_id(PK), item_id(FK of item), color_id(FK of color)
+color_img: color_id(PK), color, color_img
+product_item: product_item_id(PK), size, quantity, item_category_id(FK of item_category)
+customer_cart: customer_cart_id(PK), selected_size, quantity, item_id(FK of item), username(FK of customer), color_id(FK of color)
+total: tot_id(PK), username(FK of customer), item_id(FK of item), shipping_total, total, sub_total
+customer_order: order_id(PK), day, date, customer_cart_id(FK of customer_cart), tot_id(FK of total)
